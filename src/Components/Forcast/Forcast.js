@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 const Forcast = () => {
   const {id}= useParams()
   console.log(id)
-const weather = useSelector(state=>state.weather.forecast.forecastday.find(el=> el.date_epoch === id))
+const weather = useSelector(state=>state.weather.forecast.forecastday.find(el=> el.date_epoch === +id));
 console.log(weather)
 const getDayName=(date = new Date(), locale = 'en-US')=> {
   return date.toLocaleDateString(locale, {weekday: 'long'});

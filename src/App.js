@@ -43,13 +43,14 @@ const searchCountry = (x) =>{
       getAllWeather()
       dispatch(getAllWeather(query))
       
-    }, [dispatch,query])
+    }, [dispatch, query])
 
   return (
     <div>
       <Routes> 
         <Route path="/" element= {loading? "Loading ..." :<SearchWeather data={weather}  searchCountry = {searchCountry}/> } />
         <Route path="/forcast/:id" element={<Forcast/>} /> 
+     
       </Routes>
     </div>
   );
